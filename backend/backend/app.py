@@ -7,6 +7,8 @@ import requests
 from datetime import datetime 
 from collections import defaultdict
 import random
+from dotenv import load_dotenv
+import os
 
 import warnings
 warnings.filterwarnings("ignore", message="X does not have valid feature names")
@@ -30,7 +32,8 @@ logging.info("Starting Weather Prediction Service...")
 model = joblib.load("model/random_forest_weather.pkl")
 label_encoder = joblib.load("model/label_encoder.pkl")
 
-API_KEY = "0d63b0619fa65a848b052aa60fc32767"
+load_dotenv()
+API_KEY = os.getenv('VITE_OPENWEATHER_API_KEY')
 
 # ---------------- Helper Function ---------------- #
 def fetch_weather_data(city_name):
