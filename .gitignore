@@ -19,7 +19,8 @@ instance/
 .pytest_cache/
 
 # Environment variables
-.env
+**/.env
+
 
 # Logs
 logs

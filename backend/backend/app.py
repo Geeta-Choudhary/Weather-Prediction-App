@@ -33,7 +33,7 @@ model = joblib.load("model/random_forest_weather.pkl")
 label_encoder = joblib.load("model/label_encoder.pkl")
 
 load_dotenv()
-API_KEY = os.getenv('VITE_OPENWEATHER_API_KEY')
+API_KEY = os.getenv('OPENWEATHER_API_KEY')
 
 # ---------------- Helper Function ---------------- #
 def fetch_weather_data(city_name):
